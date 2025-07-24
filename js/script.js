@@ -238,31 +238,6 @@ document.addEventListener('DOMContentLoaded', () => {
         nextBtn.addEventListener('click', nextSlide);
     }
 
-    // Featured Employers Auto-Scroll
-    const employerScroll = document.getElementById('employerScroll');
-    let employerScrollAmount = 0;
-    const employerScrollSpeed = 0.5;
-    let employerAutoScroll;
-
-    function startEmployerAutoScroll() {
-        employerAutoScroll = setInterval(() => {
-            employerScrollAmount += employerScrollSpeed;
-            if (employerScrollAmount >= employerScroll.scrollWidth - employerScroll.clientWidth) {
-                employerScrollAmount = 0;
-            }
-            employerScroll.scrollLeft = employerScrollAmount;
-        }, 30);
-    }
-
-    function stopEmployerAutoScroll() {
-        clearInterval(employerAutoScroll);
-    }
-
-    if(employerScroll!=null){
-        employerScroll.addEventListener('mouseenter', stopEmployerAutoScroll);
-        employerScroll.addEventListener('mouseleave', startEmployerAutoScroll);
-        startEmployerAutoScroll();
-    }
 
     // Message Slider and Theme Toggle
     function initializeHeaderFeatures() {
